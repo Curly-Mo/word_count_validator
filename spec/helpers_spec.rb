@@ -1,28 +1,28 @@
 require "./spec/spec_helper"
 require './helpers/word_count'
-require 'active_support/core_ext/hash'
+require 'extlib_lite'
 
 describe 'The Word Counting Helpers' do
   describe 'count_frequencies' do
     it "counts correctly" do
       expect(
-        count_frequencies("foo bar baz", []).stringify_keys
+        count_frequencies("foo bar baz", []).stringify
       ).to eq(
-        {"foo": 1, "bar": 1, "baz":1}.stringify_keys
+        {"foo": 1, "bar": 1, "baz":1}.stringify
       )
     end
     it "excludes correctly" do
       expect(
-        count_frequencies("foo bar baz", ["bar"]).stringify_keys
+        count_frequencies("foo bar baz", ["bar"]).stringify
       ).to eq(
-        {"foo": 1, "baz":1}.stringify_keys
+        {"foo": 1, "baz":1}.stringify
       )
     end
     it "handles case and punctuation" do
       expect(
-        count_frequencies("Foo bA'r baZ.", []).stringify_keys
+        count_frequencies("Foo bA'r baZ.", []).stringify
       ).to eq(
-        {"foo": 1, "ba'r": 1, "baz":1}.stringify_keys
+        {"foo": 1, "ba'r": 1, "baz":1}.stringify
       )
     end
   end
