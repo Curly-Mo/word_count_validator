@@ -11,13 +11,17 @@ bundle install
 
 ## Run Server
 ```
-bundle exec rackup -p PORT config.ru &
+bundle exec rackup config.ru -s Puma -p $PORT
+```
+or simply execute
+```
+./run
 ```
 
 ## Usage
 ### Get text
 ```
-curl -X GET -w '%{http_code} "localhost:PORT"
+curl -X GET -w '%{http_code} "localhost:8000"
 ```
 Example Response:
 ```
@@ -30,7 +34,7 @@ Example Response:
 ### Validate count
 #### Wrong Attempt
 ```
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"text":"The quick brown fox jumps over the lazy dog", "exclude": ["the", "dog"], "frequency":{"the":2, "dog":1, "quick":1, "brown":1, "fox":1, "jumps":1, "over":1, "lazy":1}}' -w '%{http_code} localhost:PORT
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"text":"The quick brown fox jumps over the lazy dog", "exclude": ["the", "dog"], "frequency":{"the":2, "dog":1, "quick":1, "brown":1, "fox":1, "jumps":1, "over":1, "lazy":1}}' -w '%{http_code} localhost:8000
 ```
 Expected Response:
 ```
@@ -41,7 +45,7 @@ Expected Response:
 ```
 #### Correct Attempt
 ```
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"text":"The quick brown fox jumps over the lazy dog", "exclude": ["the", "dog"], "frequency":{"quick":1, "brown":1, "fox":1, "jumps":1, "over":1, "lazy":1}}' localhost:PORT
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"text":"The quick brown fox jumps over the lazy dog", "exclude": ["the", "dog"], "frequency":{"quick":1, "brown":1, "fox":1, "jumps":1, "over":1, "lazy":1}}' localhost:8000
 ```
 Expected Response:
 ```
