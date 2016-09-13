@@ -5,10 +5,11 @@ gem "sinatra"
 gem "sinatra-contrib"
 
 gem "json"
-gem "rspec"
 
-gem "rake"
-gem "rack"
+group :test, :development do
+  gem "rack"
+  gem "rspec"
+end
 
 gem "literate_randomizer"
 gem "json-schema"
