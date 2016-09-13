@@ -3,6 +3,7 @@ require 'sinatra/reloader' if development?
 require 'literate_randomizer'
 require 'json-schema'
 require_relative 'helpers/word_count'
+
 class App < Sinatra::Base
   before do
     content_type :json

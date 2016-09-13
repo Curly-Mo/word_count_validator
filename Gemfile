@@ -8,7 +8,7 @@ gem "json"
 gem "rspec"
 
 gem "rake"
-gem "rackup"
+gem "rack"
 
 gem "literate_randomizer"
 gem "json-schema"
