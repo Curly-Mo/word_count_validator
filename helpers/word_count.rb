@@ -18,6 +18,7 @@ def generate_exclude_list(text)
     exclude_count = rand(1...text_array.length)
   end
   exclude = text_array.sample(exclude_count)
+  exclude = exclude.uniq
   return exclude
 end
 

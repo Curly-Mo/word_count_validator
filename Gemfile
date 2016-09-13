@@ -9,6 +9,7 @@ gem "json"
 group :test, :development do
   gem "rack"
   gem "rspec"
+  gem 'coveralls', require: false
 end
 
 gem "literate_randomizer"
