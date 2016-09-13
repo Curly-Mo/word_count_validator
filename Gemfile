@@ -5,9 +5,9 @@ gem "sinatra"
 gem "sinatra-contrib"
 
 gem "json"
+gem "rack"
 
 group :test, :development do
-  gem "rack"
   gem "rspec"
   gem 'coveralls', require: false
   gem "extlib_lite"

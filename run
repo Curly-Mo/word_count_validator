@@ -1,0 +1,2 @@
+PORT=8000
+bundle exec rackup config.ru -s Puma -p $PORT
