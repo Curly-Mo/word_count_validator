@@ -1,18 +1,18 @@
 def count_frequencies(text, exclude)
   exclude = exclude.map(&:downcase)
-  text_array = text.split(/\W/)
+  text_array = text.split(/[^\w']/)
   frequencies = Hash.new(0)
   for word in text_array
     if not exclude.include?(word.downcase)
-      frequencies[word] += 1
+      frequencies[word.downcase] += 1
     end
   end
   return frequencies
 end
 
 def generate_exclude_list(text)
-  text_array = text.downcase.split(/\W/)
-  if text_array.length < 1
+  text_array = text.downcase.split(/[^\w']/)
+  if text_array.length <= 1
     exclude_count = 0
   else
     exclude_count = rand(1...text_array.length)
