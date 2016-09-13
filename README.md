@@ -1,7 +1,7 @@
 # WordCount
 RESTful API CAPTCHA requiring humans to count the occurances of words in a sentences, given a list of exclusion words.  
 
-[![Build Status](https://travis-ci.org/Curly-Mo/word_count_validator.svg?branch=master)](https://travis-ci.org/Curly-Mo/word_count_validator)  
+[![Build Status](https://travis-ci.org/Curly-Mo/word_count_validator.svg?branch=master)](https://travis-ci.org/Curly-Mo/word_count_validator) 
 [![Coverage Status](https://coveralls.io/repos/github/Curly-Mo/word_count_validator/badge.svg?branch=master)](https://coveralls.io/github/Curly-Mo/word_count_validator?branch=master)  
 
 ## Installation
