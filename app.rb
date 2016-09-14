@@ -9,6 +9,8 @@ class App < Sinatra::Base
     content_type :json
   end
 
+  # Accept an HTTP GET request and return a text string and list of
+  # exclusion words as JSON
   get '/' do
     source_text = LiterateRandomizer.sentence(words: 4..25)
     exclude = generate_exclude_list(source_text)
@@ -16,6 +18,8 @@ class App < Sinatra::Base
     status 200
   end
 
+  # Accept a POST request, validate the parameters and return status 200 if the
+  # frequency counts are correct and 400 otherwise
   post '/' do
     data = request.body.read
     # Valid json schema
